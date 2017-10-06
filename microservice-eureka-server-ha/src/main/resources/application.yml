@@ -1,0 +1,51 @@
+spring:
+  application:
+    name: microservice-eureka-server-ha
+---
+spring:
+  profiles: peer1
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+server:
+  port: 8761
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://getset:123456@peer2:8762/eureka/
+security:
+  basic:
+    enabled: true
+  user:
+    name: getset
+    password: 123456
+---
+spring:
+  profiles: peer2
+  jpa:
+    generate-ddl: false
+    show-sql: true
+    hibernate:
+      ddl-auto: none
+  datasource:
+    platform: h2
+server:
+  port: 8762
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://getset:123456@peer1:8761/eureka/
+security:
+  basic:
+    enabled: true
+  user:
+    name: getset
+    password: 123456

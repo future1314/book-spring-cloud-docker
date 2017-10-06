@@ -1,0 +1,13 @@
+server:
+  port: 8040
+spring:
+  application:
+    name: microservice-gateway-zuul
+eureka:
+  client:
+    service-url:
+      defaultZone: http://getset:123456@localhost:8761/eureka/
+zuul:
+  PreRequestLogFilter:
+    pre:
+      disable: true

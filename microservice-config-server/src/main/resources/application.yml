@@ -1,0 +1,16 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: microservice-config-server
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:get-set/microservice-config-repo.git
+encrypt:
+  key: getset
+eureka:
+  client:
+    service-url:
+      defaultZone: http://getset:123456@localhost:8761/eureka/

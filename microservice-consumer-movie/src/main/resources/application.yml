@@ -1,0 +1,11 @@
+server:
+  port: 7901
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://getset:123456@localhost:8761/eureka/
+#  instance:
+#    prefer-ip-address: true
+#microservice-provider-user:
+#  ribbon:
+#    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule

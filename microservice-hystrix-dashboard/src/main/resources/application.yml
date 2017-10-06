@@ -1,0 +1,9 @@
+server:
+  port: 8030
+spring:
+  application:
+    name: microservice-hystrix-dashboard
+eureka:
+  client:
+    service-url:
+      defaultZone: http://getset:123456@localhost:8761/eureka/
